@@ -1,21 +1,24 @@
-﻿@model IEnumerable<ShoppingSpree.Data.Models.ProductsModel>
+﻿@model IEnumerable<ShoppingSpree.Data.ViewModels.ProductViewModel>
 @{
     ViewBag.Title = "Index";
 
 }
 
-<h2>Index</h2>
+<h2>Choose from our wide range of collections of colours from all around the world</h2>
+<h2>Basket: 0 Items</h2>
+@Html.ActionLink("Add to collection", "AddNewProduct", "Home");
 <ul>
     @foreach (var product in Model)
     {
-        var base64 = Convert.ToBase64String(product.Image);
-        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-
         <li>
             <p>@product.ProductName</p>
             <p>@product.ProductColour</p>
             <p>@product.ProductPrice</p>
-            <img src="@imgSrc" alt="@product.Image" style="max-width:150px" />
+            <img src="@product.ConvertedImgSrc" alt="@product.Image" style="max-width:150px" />
         </li>
+
+        <a href="#">Add to basket</a>
+        @Html.ActionLink("Remove item from collection", "Delete", new { id = product.productId });
     }
 </ul>
+
