@@ -59,9 +59,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelBuilder\ProductsModelBuilder.cs" />
     <Compile Include="Models\ProductsModel.cs" />
-    <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ShoppingSpreeDbContext.cs" />
+    <Compile Include="Services\ProductDbContext.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

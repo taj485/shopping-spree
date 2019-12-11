@@ -1,4 +1,4 @@
-﻿using ShoppingSpree.Data.Models;
+using ShoppingSpree.Data.Models;
 using ShoppingSpree.Data.Services;
 using ShoppingSpree.Data.ViewModels;
 using System;
@@ -12,9 +12,9 @@ namespace ShoppingSpree.Data.ModelBuilder
 {
     public class ProductsModelBuilder
     {
-        private ShoppingSpreeDbContext _db;
+        private ProductDbContext _db;
 
-        public ProductsModelBuilder(ShoppingSpreeDbContext db)
+        public ProductsModelBuilder(ProductDbContext db)
         {
             _db = db;
         }
