@@ -16,12 +16,12 @@ namespace ShoppingSpree.Controllers
 {
     public class HomeController : Controller
     {
-        ShoppingSpreeDbContext _db;
+        ProductDbContext _db;
         ProductsModelBuilder _productsModelBuilder;
 
         public HomeController()
         {
-            _db =new ShoppingSpreeDbContext();
+            _db =new ProductDbContext();
             _productsModelBuilder = new ProductsModelBuilder(_db);
         }
 
