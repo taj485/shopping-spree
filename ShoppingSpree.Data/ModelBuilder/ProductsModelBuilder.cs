@@ -1,4 +1,4 @@
-﻿using ShoppingSpree.Data.Models;
+using ShoppingSpree.Data.Models;
 using ShoppingSpree.Data.Services;
 using ShoppingSpree.Data.ViewModels;
 using System;
