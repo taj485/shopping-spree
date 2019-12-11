@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingSpree.Data.Services
 {
-    public class ShoppingSpreeDbContext : DbContext
+    public class ProductDbContext : DbContext
     {
         public DbSet<ProductsModel> Products { get; set; }
     };
