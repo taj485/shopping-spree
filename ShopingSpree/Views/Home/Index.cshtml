@@ -5,7 +5,7 @@
 }
 
 <h2>Choose from our wide range of collections of colours from all around the world</h2>
-<h2>Basket: 0 Items</h2>
+<h2>Basket: @TempData["TotalItem"] Items</h2>
 @Html.ActionLink("Add to collection", "AddNewProduct", "Home");
 <ul>
     @foreach (var product in Model)
@@ -17,7 +17,7 @@
             <img src="@product.ConvertedImgSrc" alt="@product.Image" style="max-width:150px" />
         </li>
 
-        <a href="#">Add to basket</a>
+        <a href=@Url.Action("AddItemToBasket","Basket", new { id = product.productId })>Add to basket</a>
         @Html.ActionLink("Remove item from collection", "Delete", new { id = product.productId });
     }
 </ul>

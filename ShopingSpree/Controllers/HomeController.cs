@@ -18,6 +18,7 @@ namespace ShoppingSpree.Controllers
     {
         ProductDbContext _db;
         ProductsModelBuilder _productsModelBuilder;
+        
 
         public HomeController()
         {
@@ -41,8 +42,26 @@ namespace ShoppingSpree.Controllers
                     ConvertedImgSrc = imgSrc
                 });
             }
+
+            int totalItem = 0;
+
+            if (TempData["Basket"] != null)
+            {
+
+                List<ProductsModel> Basket = TempData["Basket"] as List<ProductsModel>;
+
+                foreach (var item in Basket)
+                {
+                    totalItem += 1;
+                }
+                TempData["totalItem"] = totalItem;
+            }
+
+            TempData.Keep();
+
             return View(model);
-        }
+         }
+        
 
         public ActionResult AddNewProduct()
         {
@@ -93,5 +112,7 @@ namespace ShoppingSpree.Controllers
             var base64 = Convert.ToBase64String(img);
             return string.Format("data:image/gif;base64,{0}", base64);
         }
+
+        
     }
 }
